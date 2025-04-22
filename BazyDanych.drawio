@@ -278,41 +278,6 @@
             <mxPoint x="880" y="570" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="t0saiEG1jBcrnA9zouVA-1" value="klienci" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="150" y="790" width="160" height="150" as="geometry">
-            <mxRectangle x="260" y="850" width="70" height="30" as="alternateBounds" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="t0saiEG1jBcrnA9zouVA-2" value="PK id_klienta INTEGER" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="t0saiEG1jBcrnA9zouVA-1">
-          <mxGeometry y="30" width="160" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="t0saiEG1jBcrnA9zouVA-3" value="imie VARCHAR(20)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="t0saiEG1jBcrnA9zouVA-1">
-          <mxGeometry y="60" width="160" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="t0saiEG1jBcrnA9zouVA-4" value="nazwisko VARCHAR(30)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="t0saiEG1jBcrnA9zouVA-1">
-          <mxGeometry y="90" width="160" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="t0saiEG1jBcrnA9zouVA-14" value="nr_telefonu CHAR(9)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="t0saiEG1jBcrnA9zouVA-1">
-          <mxGeometry y="120" width="160" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="t0saiEG1jBcrnA9zouVA-5" value="sprzety" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="400" y="780" width="160" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="t0saiEG1jBcrnA9zouVA-6" value="PK id_sprzetu INTEGER" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="t0saiEG1jBcrnA9zouVA-5">
-          <mxGeometry y="30" width="160" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="t0saiEG1jBcrnA9zouVA-7" value="FK id_klienta INTEGER" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="t0saiEG1jBcrnA9zouVA-5">
-          <mxGeometry y="60" width="160" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="t0saiEG1jBcrnA9zouVA-8" value="rodzaj VARCHAR(20)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="t0saiEG1jBcrnA9zouVA-5">
-          <mxGeometry y="90" width="160" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="t0saiEG1jBcrnA9zouVA-15" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" target="t0saiEG1jBcrnA9zouVA-7">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="530" y="930" as="sourcePoint" />
-            <mxPoint x="580" y="880" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
         <mxCell id="t0saiEG1jBcrnA9zouVA-16" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;klienci&lt;/font&gt;" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="254" y="1030" width="176" height="160" as="geometry" />
         </mxCell>
@@ -349,7 +314,7 @@
         <mxCell id="t0saiEG1jBcrnA9zouVA-27" value="&lt;div style=&quot;line-height: 210%;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;PK id_dzialania INTEGER&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;FK id_zgloszenia INTEGER&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;FK id_pracownika INTEGER&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;data DATE&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;opis VARCHAR(40)&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;whiteSpace=wrap;" vertex="1" parent="t0saiEG1jBcrnA9zouVA-26">
           <mxGeometry y="50" width="189" height="140" as="geometry" />
         </mxCell>
-        <mxCell id="t0saiEG1jBcrnA9zouVA-30" value="pracownicy" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="t0saiEG1jBcrnA9zouVA-30" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;pracownicy&lt;/font&gt;" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="1460" y="1140" width="210" height="170" as="geometry" />
         </mxCell>
         <mxCell id="t0saiEG1jBcrnA9zouVA-31" value="&lt;div style=&quot;line-height: 210%;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;PK id_pracownika INTEGER&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;FK id_zespolu INTEGER&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;imie VARCHAR(20)&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;nazwisko VARCHAR(20)&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;whiteSpace=wrap;" vertex="1" parent="t0saiEG1jBcrnA9zouVA-30">
@@ -367,7 +332,7 @@
             <mxPoint x="1450" y="1090" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="t0saiEG1jBcrnA9zouVA-39" value="zespoły" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="t0saiEG1jBcrnA9zouVA-39" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;zespoły&lt;/font&gt;" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="1910" y="1140" width="200" height="120" as="geometry" />
         </mxCell>
         <mxCell id="t0saiEG1jBcrnA9zouVA-40" value="&lt;div style=&quot;line-height: 210%;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;PK id_zespolu INTEGER&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;specjalizacja VARCHAR(30)&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;whiteSpace=wrap;" vertex="1" parent="t0saiEG1jBcrnA9zouVA-39">
