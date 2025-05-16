@@ -1,0 +1,128 @@
+CREATE OR REPLACE PROCEDURE dodaj_pracownika(imie VARCHAR, nazwisko VARCHAR, id_zespolu INTEGER) language plpgsql as $$
+declare
+	pracownik_istnieje boolean;
+begin
+	pracownik_istnieje := EXISTS(SELECT 1 FROM pracownicy p WHERE p.imie = dodaj_pracownika.imie AND p.nazwisko = dodaj_pracownika.nazwisko);
+	if pracownik_istnieje then
+		raise exception 'Taki pracownik juz istnieje';
+	end if;
+	INSERT INTO pracownicy (imie, nazwisko, id_zespolu) VALUES (dodaj_pracownika.imie, dodaj_pracownika.nazwisko, dodaj_pracownika.id_zespolu);
+
+end $$;
+
+CREATE OR REPLACE PROCEDURE dodaj_konto(id_pracownika INTEGER, nazwa VARCHAR, haslo CHAR(64), rola VARCHAR) language plpgsql as $$
+
+declare
+	nazwa_istnieje boolean;
+begin
+	nazwa_istnieje := EXISTS(SELECT 1 FROM konta WHERE konta.nazwa = dodaj_konto.nazwa);
+	if nazwa_istnieje then
+		raise exception 'Taka nazwa uzytkownika juz istnieje';
+	end if;
+	if rola not in ('admin', 'pracownik') then
+		raise exception 'Nieprawidlowa rola. Dozwolone wartosci: admin lub pracownik';
+	end if;
+
+	INSERT INTO konta (id_pracownika, nazwa, haslo, rola) VALUES (dodaj_konto.id_pracownika, dodaj_konto.nazwa, dodaj_konto.haslo, dodaj_konto.rola);
+end $$;
+
+
+CREATE OR REPLACE PROCEDURE dodaj_konto(id_pracownika INTEGER, nazwa VARCHAR, haslo CHAR(64), rola VARCHAR) language plpgsql as $$
+
+declare
+	nazwa_istnieje boolean;
+begin
+	nazwa_istnieje := EXISTS(SELECT 1 FROM konta WHERE konta.nazwa = dodaj_pracownika.nazwa);
+	if nazwa_istnieje then
+		raise exception 'Taka nazwa uzytkownika juz istnieje';
+	end if;
+	if rola not in ('admin', 'pracownik') then
+		raise exception 'Nieprawidlowa rola. Dozwolone wartosci: admin lub pracownik';
+	end if;
+	if id_pracownika IS NULL then
+		INSERT INTO konta(nazwa, haslo, rola) VALUES (nazwa, haslo, rola);
+	else
+	INSERT INTO konta (id_pracownika, nazwa, haslo, rola) VALUES (id_pracownika, nazwa, haslo, rola);
+	end if;
+end $$;
+
+
+CREATE OR REPLACE PROCEDURE dodaj_zespol(specjalizacja VARCHAR) language plpgsql as $$
+begin
+	if specjalizacja IS NULL then
+		raise exception 'Specjalizacja nie moze byc pusta';
+	end if;
+	INSERT INTO zespoly (specjalizacja) VALUES (specjalizacja);
+end $$;
+
+
+
+CREATE PROCEDURE dodaj_klienta(imie VARCHAR, nazwisko VARCHAR, telefon CHAR) language plpgsql as $$
+begin
+	if telefon IS NULL then
+		raise exception 'Telefon nie moze byc pusty';
+	end if;
+	if not telefon ~ '^[0-9]{9}$' then
+		raise exception 'Numer telefonu musi skladac sie z samych cyfr';
+	end if;
+
+	INSERT INTO klienci (imie, nazwisko, telefon) VALUES (imie, nazwisko, telefon);
+end $$;
+
+
+
+CREATE OR REPLACE PROCEDURE dodaj_sprzet(id_klienta INTEGER, rodzaj VARCHAR) language plpgsql as $$
+declare
+	klient_istnieje boolean;
+begin
+	if id_klienta IS NULL OR rodzaj IS NULL then
+		raise exception 'id_klienta i rodzaj nie moga byc null';
+	end if;
+	klient_istnieje := EXISTS(SELECT 1 FROM klienci WHERE id = id_klienta);
+	if not klient_istnieje then
+		raise exception 'Klient o tym id nie istnieje';
+	end if;
+	INSERT INTO sprzety (id_klienta, rodzaj) VALUES (id_klienta, rodzaj);
+end $$;
+
+
+
+CREATE OR REPLACE PROCEDURE dodaj_dzialanie(id_zgloszenia INTEGER, data DATE, opis VARCHAR) language plpgsql as $$
+declare
+	zgloszenie_istnieje boolean;
+begin
+	if id_zgloszenia IS NULL OR data IS NULL OR opis IS NULL then
+		raise exception 'id_zgloszenia, data i opis nie moga byc null';
+	end if;
+	zgloszenie_istnieje := EXISTS(SELECT 1 FROM zgloszenia WHERE id = id_zgloszenia);
+	if not zgloszenie_istnieje then
+		raise exception 'Zgloszenie o tym id nie istnieje';
+	end if;
+	INSERT INTO dzialania (id_zgloszenia, data, opis) VALUES (id_zgloszenia, data, opis);
+end $$;
+
+
+CREATE OR REPLACE PROCEDURE dodaj_zgloszenie(id_sprzetu INTEGER, id_pracownika INTEGER, status VARCHAR, data_przyjecia DATE, data_zakonczenia DATE, usterka VARCHAR) language plpgsql as $$
+declare
+	sprzet_istnieje boolean;
+	pracownik_istnieje boolean;
+begin
+	if id_sprzetu IS NULL OR id_pracownika IS NULL OR status IS NULL OR
+	data_przyjecia IS NULL OR data_zakonczenia IS NULL OR usterka IS NULL then
+		raise exception 'Wartosci nie moga byc null';
+	end if;
+	sprzet_istnieje := EXISTS(SELECT 1 FROM sprzety WHERE id = id_sprzetu);
+	if not sprzet_istnieje then
+		raise exception 'Sprzet o takim id nie istnieje';
+	end if;
+	pracownik_istnieje := EXISTS(SELECT 1 FROM pracownicy WHERE id = id_pracownika);
+	if not pracownik_istnieje then
+		raise exception 'Pracownik o takim id nie istnieje';
+	end if;
+	if data_zakonczenia < data_przyjecia then
+		raise exception 'Data zakonczenia nie moze byc mniejsza od daty przyjecia';
+	end if;
+
+	INSERT INTO zgloszenia (id_sprzetu, id_pracownika, status, data_przyjecia, data_zakonczenia, usterka)
+	VALUES (id_sprzetu, id_pracownika, status, data_przyjecia, data_zakonczenia, usterka);
+end $$;

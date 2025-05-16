@@ -1,0 +1,15 @@
+przebudowac backend do programowania obiektowego
+
+stworzyc klase employee ale pewnie dla kazdej tabeli bedzie trzeba stworzyc oddzielna klase i jakas klase do zarzadzania innymi klasami
+
+niech beda dwie klasy jedna podstawowa dla zwyklych uzytkownikow ma metody do dodawania rekordow i wyswietlania tabel
+a druga klasa ktora bedzie po niej dziedziczyc ma dodatkowe metody do usuwanie i edytowania rekordow,
+ w takim razie podstawowe klasy dla rekordow tabel nie maja zadnych funkcji tylko pola
+
+wyjebac tworzenie uzytkownika z glownej strony - niech tylko konto z rola admin maja dostep do tworzenia nowych uzytkownikow w srodku aplikacji
+oprocz tego moze edytowac, usuwac i dodawac rekordy, ma dostep do wszystkich tabel
+
+zwykly uzytkownik ma dostep jedynie do widokow bazy, nie ma opcji do edytowania czy usuwania rekordow ale w sumie
+powinien móc je dodawac i nie powinien miec dostepu do tabeli z kontami no bo sa hasla itp
+
+

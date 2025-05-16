@@ -1,0 +1,20 @@
+CREATE VIEW dzialania_widok as
+SELECT * FROM dzialania;
+
+CREATE VIEW klienci_widok as
+SELECT * FROM klienci;
+
+CREATE VIEW pracownicy_widok as
+SELECT * FROM pracownicy;
+
+CREATE VIEW zgloszenia_widok as
+SELECT * FROM zgloszenia;
+
+CREATE VIEW zespoly_widok as
+SELECT * FROM zespoly;
+
+CREATE VIEW sprzety_widok as
+SELECT * FROM sprzety;
+
+CREATE VIEW konta_widok as
+SELECT * FROM konta;
